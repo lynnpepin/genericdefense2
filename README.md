@@ -6,3 +6,6 @@ The only changes made:
 
  - InputMap
    - Bindings for gamepad buttons as `pad_`
+   - Bindings for mouse buttons as `mouse_`
+   - Bindings for keyboard as `key_`
+     - Only with bindings for 

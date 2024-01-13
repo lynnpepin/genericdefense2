@@ -1,6 +1,86 @@
-[gd_scene load_steps=2 format=3 uid="uid://bu1tu13ni0y80"]
+[gd_scene load_steps=10 format=3 uid="uid://bu1tu13ni0y80"]
 
 [ext_resource type="Script" path="res://base.gd" id="1_q3bun"]
+[ext_resource type="Texture2D" uid="uid://w6c4uokda57e" path="res://test256.png" id="2_lpy5e"]
+[ext_resource type="Script" path="res://Player.gd" id="3_5lttc"]
+[ext_resource type="Texture2D" uid="uid://c6ua2yjr6s2r4" path="res://8x8diamond.png" id="3_finim"]
+[ext_resource type="Script" path="res://PlayerSprite.gd" id="5_xsgjp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ejjwi"]
+size = Vector3(16, 16, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dgfpk"]
+size = Vector3(16, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jasvv"]
+size = Vector3(1, 16, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w7ido"]
+size = Vector3(0.6, 0.6, 0.6)
 
 [node name="Node" type="Node"]
 script = ExtResource("1_q3bun")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="BaseBackground" type="Sprite3D" parent="Node3D"]
+lod_bias = 0.001
+pixel_size = 0.0625
+texture_filter = 0
+texture = ExtResource("2_lpy5e")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+projection = 1
+current = true
+fov = 48.3862
+size = 16.0
+near = 0.001
+far = 256.0
+
+[node name="FloorAndWalls" type="Node3D" parent="Node3D"]
+
+[node name="Floor" type="StaticBody3D" parent="Node3D/FloorAndWalls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/FloorAndWalls/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+shape = SubResource("BoxShape3D_ejjwi")
+
+[node name="TopWall" type="StaticBody3D" parent="Node3D/FloorAndWalls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/FloorAndWalls/TopWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5, 0.5)
+shape = SubResource("BoxShape3D_dgfpk")
+
+[node name="BottomWall" type="StaticBody3D" parent="Node3D/FloorAndWalls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/FloorAndWalls/BottomWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.5, 0.5)
+shape = SubResource("BoxShape3D_dgfpk")
+
+[node name="LeftWall" type="StaticBody3D" parent="Node3D/FloorAndWalls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/FloorAndWalls/LeftWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 0.5)
+shape = SubResource("BoxShape3D_jasvv")
+
+[node name="RigthWall" type="StaticBody3D" parent="Node3D/FloorAndWalls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/FloorAndWalls/RigthWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 0.5)
+shape = SubResource("BoxShape3D_jasvv")
+
+[node name="PlayerBody" type="CharacterBody3D" parent="Node3D"]
+platform_on_leave = 2
+script = ExtResource("3_5lttc")
+
+[node name="PlayerSprite" type="Sprite3D" parent="Node3D/PlayerBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+pixel_size = 0.0625
+texture_filter = 0
+texture = ExtResource("3_finim")
+script = ExtResource("5_xsgjp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/PlayerBody"]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_w7ido")

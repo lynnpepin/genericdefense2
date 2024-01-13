@@ -10,10 +10,18 @@ config_version=5
 
 [application]
 
-config/name="GodotStarter"
+config/name="RingBearerZero"
+config/description="A project with a complete InputMap, ready to go, with no assumptions."
 run/main_scene="res://base.tscn"
-config/features=PackedStringArray("4.1", "GL Compatibility")
+config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=512
+window/size/viewport_height=512
+window/stretch/scale_mode="integer"
 
 [input]
 
@@ -428,7 +436,16 @@ key_enter={
 ]
 }
 
+[physics]
+
+3d/default_gravity=0.0
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+viewport/transparent_background=true
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

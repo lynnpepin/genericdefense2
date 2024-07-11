@@ -1,8 +1,8 @@
 extends Node2D
 
 var RADIUS = 64.0;
-var FIRE_PERIOD = 2.0;
-var FIRE_TIMER  = 2.0;
+var FIRE_PERIOD = 1.0;
+var FIRE_TIMER  = 1.0;
 var CREEPS_INSIDE = []
 var DAMAGE      = 3.0;
 

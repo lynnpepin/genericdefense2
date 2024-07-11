@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu1tu13ni0y80"]
+[gd_scene load_steps=14 format=3 uid="uid://bu1tu13ni0y80"]
 
 [ext_resource type="Script" path="res://base.gd" id="1_q3bun"]
 [ext_resource type="Texture2D" uid="uid://dlnm8wvs0cjb" path="res://level.png" id="2_yk70w"]
-[ext_resource type="Script" path="res://Sprite2D.gd" id="3_7gk0i"]
+[ext_resource type="Script" path="res://Creep.gd" id="3_wvatw"]
+[ext_resource type="Script" path="res://Tower.gd" id="4_b58bo"]
 
 [sub_resource type="Curve2D" id="Curve2D_cgbak"]
-bake_interval = 2.0
+bake_interval = 1.0
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 144, -32, 0, 0, 0, 0, 144, 49, 0, 0, 0, 0, 48, 49, 0, 0, 0, 0, 48, 145, 0, 0, 0, 0, 112, 145, 0, 0, 0, 0, 112, 113, 0, 0, 0, 0, 240, 113, 0, 0, 0, 0, 240, 241, 0, 0, 0, 0, 48, 241, 0, 0, 0, 0, 48, 465, 0, 0, 0, 0, 144, 465, 0, 0, 0, 0, 144, 305, 0, 0, 0, 0, 304, 305, 0, 0, 0, 0, 305, 241, 0, 0, 0, 0, 368, 241, 0, 0, 0, 0, 368, 401, 0, 0, 0, 0, 240, 401, 0, 0, 0, 0, 240, 465, 0, 0, 0, 0, 464, 465, 0, 0, 0, 0, 464, 369, 0, 0, 0, 0, 432, 369, 0, 0, 0, 0, 432, 305, 0, 0, 0, 0, 464, 305, 0, 0, 0, 0, 464, 177, 0, 0, 0, 0, 336, 177, 0, 0, 0, 0, 336, 49, 0, 0, 0, 0, 240, 49, 0, 0, 0, 0, 240, -32)
 }
@@ -17,32 +18,72 @@ frequency = 0.05
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7x8io"]
 width = 16
 height = 16
+in_3d_space = true
 generate_mipmaps = false
-as_normal_map = true
+bump_strength = 3.0
 noise = SubResource("FastNoiseLite_ssrcw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkfrl"]
 size = Vector2(16, 16)
 
+[sub_resource type="Gradient" id="Gradient_tw3jo"]
+offsets = PackedFloat32Array(0.185754, 0.349162, 0.797486)
+colors = PackedColorArray(0, 0, 0, 1, 0.0342679, 0.0342679, 0.0342679, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_doj42"]
+frequency = 0.125
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kijvo"]
+width = 16
+height = 16
+seamless = true
+color_ramp = SubResource("Gradient_tw3jo")
+noise = SubResource("FastNoiseLite_doj42")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r6eh2"]
+radius = 64.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yqms"]
+size = Vector2(16, 16)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_q3bun")
 
-[node name="Level" type="Sprite2D" parent="."]
+[node name="LevelBackground" type="Sprite2D" parent="."]
 position = Vector2(256, 256)
 texture = ExtResource("2_yk70w")
 
-[node name="Path2D" type="Path2D" parent="."]
+[node name="CreepPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_cgbak")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+[node name="PathFollow2D" type="PathFollow2D" parent="CreepPath"]
 position = Vector2(144, -32)
 rotation = 1.5708
 
-[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
+[node name="Creep" type="Node2D" parent="CreepPath/PathFollow2D"]
+script = ExtResource("3_wvatw")
+
+[node name="Sprite2D" type="Sprite2D" parent="CreepPath/PathFollow2D/Creep"]
 texture = SubResource("NoiseTexture2D_7x8io")
-script = ExtResource("3_7gk0i")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Path2D/PathFollow2D/Sprite2D"]
+[node name="StaticBody2D" type="StaticBody2D" parent="CreepPath/PathFollow2D/Creep"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CreepPath/PathFollow2D/Creep/StaticBody2D"]
 shape = SubResource("RectangleShape2D_fkfrl")
+
+[node name="Tower" type="Node2D" parent="."]
+position = Vector2(80, 112)
+script = ExtResource("4_b58bo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tower"]
+texture = SubResource("NoiseTexture2D_kijvo")
+
+[node name="AttackArea" type="Area2D" parent="Tower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/AttackArea"]
+shape = SubResource("CircleShape2D_r6eh2")
+
+[node name="TowerArea" type="Area2D" parent="Tower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/TowerArea"]
+shape = SubResource("RectangleShape2D_0yqms")

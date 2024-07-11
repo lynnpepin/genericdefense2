@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 @onready var _follow :PathFollow2D = get_parent()
 var _speed :float = 60.0
 

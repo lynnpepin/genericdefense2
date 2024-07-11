@@ -3,6 +3,7 @@ extends Node2D
 var RADIUS = 64.0;
 var FIRE_PERIOD = 2.0;
 var FIRE_TIMER  = 2.0;
+var CREEPS_INSIDE = []
 
 # Variables for handling mouse events
 var mouse_area_inside = false;
@@ -62,11 +63,13 @@ func _draw():
 
 func _on_attack_area_entered(area):
 	if area.is_in_group("creep"):
-		print("A creep has entered the area.")
+		CREEPS_INSIDE.append(area)
+		print("A creep has entered the area. Total creeps: %d" % len(CREEPS_INSIDE))
 
 func _on_attack_area_exited(area):
 	if area.is_in_group("creep"):
-		print("A creep has entered the area.")
+		CREEPS_INSIDE.erase(area)
+		print("A creep has entered the area. Total creeps: %d" % len(CREEPS_INSIDE))
 
 # Signal handler for mouse entered
 func _on_mouse_entered():

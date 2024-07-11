@@ -16,9 +16,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	HEALTH -= delta
+	#HEALTH -= delta
 	queue_redraw()
 	pass
+
+func damage(value):
+	HEALTH -= value
 
 func _draw():
 	draw_line(

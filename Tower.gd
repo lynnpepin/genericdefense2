@@ -4,6 +4,7 @@ var RADIUS = 64.0;
 var FIRE_PERIOD = 2.0;
 var FIRE_TIMER  = 2.0;
 var CREEPS_INSIDE = []
+var DAMAGE      = 3.0;
 
 # Variables for handling mouse events
 var mouse_area_inside = false;
@@ -26,8 +27,9 @@ func _process(delta):
 	# Handle fire timer
 	if FIRE_TIMER >= FIRE_PERIOD:
 		# can fire
-		FIRE_TIMER = 0#FIRE_PERIOD
-		pass
+		if len(CREEPS_INSIDE) > 0:
+			FIRE_TIMER = 0.0
+			CREEPS_INSIDE[0].get_parent().damage(DAMAGE)
 	else:
 		# can' fire, increase time
 		FIRE_TIMER += delta

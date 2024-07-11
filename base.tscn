@@ -1,86 +1,48 @@
-[gd_scene load_steps=10 format=3 uid="uid://bu1tu13ni0y80"]
+[gd_scene load_steps=8 format=3 uid="uid://bu1tu13ni0y80"]
 
 [ext_resource type="Script" path="res://base.gd" id="1_q3bun"]
-[ext_resource type="Texture2D" uid="uid://w6c4uokda57e" path="res://test256.png" id="2_lpy5e"]
-[ext_resource type="Script" path="res://Player.gd" id="3_5lttc"]
-[ext_resource type="Texture2D" uid="uid://c6ua2yjr6s2r4" path="res://8x8diamond.png" id="3_finim"]
-[ext_resource type="Script" path="res://PlayerSprite.gd" id="5_xsgjp"]
+[ext_resource type="Texture2D" uid="uid://dlnm8wvs0cjb" path="res://level.png" id="2_yk70w"]
+[ext_resource type="Script" path="res://Sprite2D.gd" id="3_7gk0i"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ejjwi"]
-size = Vector3(16, 16, 1)
+[sub_resource type="Curve2D" id="Curve2D_cgbak"]
+bake_interval = 2.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 144, -32, 0, 0, 0, 0, 144, 49, 0, 0, 0, 0, 48, 49, 0, 0, 0, 0, 48, 145, 0, 0, 0, 0, 112, 145, 0, 0, 0, 0, 112, 113, 0, 0, 0, 0, 240, 113, 0, 0, 0, 0, 240, 241, 0, 0, 0, 0, 48, 241, 0, 0, 0, 0, 48, 465, 0, 0, 0, 0, 144, 465, 0, 0, 0, 0, 144, 305, 0, 0, 0, 0, 304, 305, 0, 0, 0, 0, 305, 241, 0, 0, 0, 0, 368, 241, 0, 0, 0, 0, 368, 401, 0, 0, 0, 0, 240, 401, 0, 0, 0, 0, 240, 465, 0, 0, 0, 0, 464, 465, 0, 0, 0, 0, 464, 369, 0, 0, 0, 0, 432, 369, 0, 0, 0, 0, 432, 305, 0, 0, 0, 0, 464, 305, 0, 0, 0, 0, 464, 177, 0, 0, 0, 0, 336, 177, 0, 0, 0, 0, 336, 49, 0, 0, 0, 0, 240, 49, 0, 0, 0, 0, 240, -32)
+}
+point_count = 28
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_dgfpk"]
-size = Vector3(16, 1, 1)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ssrcw"]
+frequency = 0.05
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jasvv"]
-size = Vector3(1, 16, 1)
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7x8io"]
+width = 16
+height = 16
+generate_mipmaps = false
+as_normal_map = true
+noise = SubResource("FastNoiseLite_ssrcw")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_w7ido"]
-size = Vector3(0.6, 0.6, 0.6)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkfrl"]
+size = Vector2(16, 16)
 
-[node name="Node" type="Node"]
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_q3bun")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Level" type="Sprite2D" parent="."]
+position = Vector2(256, 256)
+texture = ExtResource("2_yk70w")
 
-[node name="BaseBackground" type="Sprite3D" parent="Node3D"]
-lod_bias = 0.001
-pixel_size = 0.0625
-texture_filter = 0
-texture = ExtResource("2_lpy5e")
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_cgbak")
 
-[node name="Camera3D" type="Camera3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
-projection = 1
-current = true
-fov = 48.3862
-size = 16.0
-near = 0.001
-far = 256.0
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(144, -32)
+rotation = 1.5708
 
-[node name="FloorAndWalls" type="Node3D" parent="Node3D"]
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
+texture = SubResource("NoiseTexture2D_7x8io")
+script = ExtResource("3_7gk0i")
 
-[node name="Floor" type="StaticBody3D" parent="Node3D/FloorAndWalls"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Path2D/PathFollow2D/Sprite2D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/FloorAndWalls/Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
-shape = SubResource("BoxShape3D_ejjwi")
-
-[node name="TopWall" type="StaticBody3D" parent="Node3D/FloorAndWalls"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/FloorAndWalls/TopWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5, 0.5)
-shape = SubResource("BoxShape3D_dgfpk")
-
-[node name="BottomWall" type="StaticBody3D" parent="Node3D/FloorAndWalls"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/FloorAndWalls/BottomWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.5, 0.5)
-shape = SubResource("BoxShape3D_dgfpk")
-
-[node name="LeftWall" type="StaticBody3D" parent="Node3D/FloorAndWalls"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/FloorAndWalls/LeftWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 0.5)
-shape = SubResource("BoxShape3D_jasvv")
-
-[node name="RigthWall" type="StaticBody3D" parent="Node3D/FloorAndWalls"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/FloorAndWalls/RigthWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 0.5)
-shape = SubResource("BoxShape3D_jasvv")
-
-[node name="PlayerBody" type="CharacterBody3D" parent="Node3D"]
-platform_on_leave = 2
-script = ExtResource("3_5lttc")
-
-[node name="PlayerSprite" type="Sprite3D" parent="Node3D/PlayerBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
-pixel_size = 0.0625
-texture_filter = 0
-texture = ExtResource("3_finim")
-script = ExtResource("5_xsgjp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/PlayerBody"]
-transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_w7ido")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_fkfrl")

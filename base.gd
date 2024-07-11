@@ -1,5 +1,7 @@
 extends Node
 
+var HEALTH = 100;
+var MONEY  = 100;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

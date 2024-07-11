@@ -59,6 +59,7 @@ curve = SubResource("Curve2D_cgbak")
 [node name="PathFollow2D" type="PathFollow2D" parent="CreepPath"]
 position = Vector2(144, -32)
 rotation = 1.5708
+rotates = false
 
 [node name="Creep" type="Node2D" parent="CreepPath/PathFollow2D"]
 script = ExtResource("3_wvatw")

@@ -1,6 +1,6 @@
 extends Node2D
 
-var RADIUS = 128;
+var RADIUS = 64.0;
 var FIRE_PERIOD = 2.0;
 var FIRE_TIMER  = 2.0;
 
@@ -10,8 +10,12 @@ var mouse_area_inside = false;
 
 func _ready():
 	$AttackArea/CollisionShape2D.shape.radius = RADIUS;
+	
 	$TowerArea.connect("mouse_entered", _on_mouse_entered)
 	$TowerArea.connect("mouse_exited", _on_mouse_exited)
+	
+	$AttackArea.connect("area_entered", _on_attack_area_entered)
+	$AttackArea.connect("area_exited", _on_attack_area_exited)
 	
 
 
@@ -43,7 +47,7 @@ func _draw():
 			0,
 			2 * PI,
 			121,
-			Color(.875, 0.625, 0.125),
+			Color(0.75, 0.5, 0.0),
 			2.0
 		)
 		draw_arc(
@@ -56,6 +60,14 @@ func _draw():
 			2.0
 		)
 
+func _on_attack_area_entered(area):
+	if area.is_in_group("creep"):
+		print("A creep has entered the area.")
+
+func _on_attack_area_exited(area):
+	if area.is_in_group("creep"):
+		print("A creep has entered the area.")
+
 # Signal handler for mouse entered
 func _on_mouse_entered():
 	print("Mouse has entered")
@@ -65,4 +77,5 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	print("Mouse has exited")
 	mouse_area_inside = false
+
 

@@ -66,9 +66,9 @@ script = ExtResource("3_wvatw")
 [node name="Sprite2D" type="Sprite2D" parent="CreepPath/PathFollow2D/Creep"]
 texture = SubResource("NoiseTexture2D_7x8io")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="CreepPath/PathFollow2D/Creep"]
+[node name="Area2D" type="Area2D" parent="CreepPath/PathFollow2D/Creep"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CreepPath/PathFollow2D/Creep/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CreepPath/PathFollow2D/Creep/Area2D"]
 shape = SubResource("RectangleShape2D_fkfrl")
 
 [node name="Tower" type="Node2D" parent="."]

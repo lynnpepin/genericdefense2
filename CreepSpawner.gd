@@ -6,12 +6,18 @@ var creep_scene = preload("res://creep.tscn")
 var timer = 0.0
 
 var wave = [
-	{ "speed" : 32.0, "health" : 1, "value" : 1, "damage" : 1, "period" : 1.0 },
-	{ "speed" : 32.0, "health" : 1, "value" : 1, "damage" : 1, "period" : 1.0 },
-	{ "speed" : 32.0, "health" : 1, "value" : 1, "damage" : 1, "period" : 1.0 },
-	{ "speed" : 32.0, "health" : 1, "value" : 1, "damage" : 1, "period" : 1.0 },
-	{ "speed" : 32.0, "health" : 1, "value" : 1, "damage" : 1, "period" : 1.0 },
-	{ "speed" : 32.0, "health" : 1, "value" : 1, "damage" : 1, "period" : 1.0 },
+	{ "speed" : 24.0, "health" :  4, "value" : 3, "damage" : 1, "period" : 2.0 },
+	{ "speed" : 24.0, "health" :  4, "value" : 3, "damage" : 1, "period" : 2.0 },
+	{ "speed" : 24.0, "health" :  4, "value" : 3, "damage" : 1, "period" : 2.0 },
+	{ "speed" : 24.0, "health" :  4, "value" : 3, "damage" : 1, "period" : 6.0 },
+	{ "speed" : 64.0, "health" :  1, "value" : 1, "damage" : 1, "period" : 0.25 },
+	{ "speed" : 64.0, "health" :  1, "value" : 1, "damage" : 1, "period" : 0.25 },
+	{ "speed" : 64.0, "health" :  1, "value" : 1, "damage" : 1, "period" : 0.25 },
+	{ "speed" : 64.0, "health" :  1, "value" : 1, "damage" : 1, "period" : 0.25 },
+	{ "speed" : 64.0, "health" :  1, "value" : 1, "damage" : 1, "period" : 0.25 },
+	{ "speed" : 64.0, "health" :  1, "value" : 1, "damage" : 1, "period" : 0.25 },
+	{ "speed" : 64.0, "health" :  1, "value" : 1, "damage" : 1, "period" : 6.0 },
+	{ "speed" : 12.0, "health" : 15, "value" : 6, "damage" : 1, "period" : 1.0 },
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -27,10 +33,10 @@ func _process(delta):
 			var creep = creep_scene.instantiate()
 			creep.SPEED  = creep_deets.speed
 			creep.HEALTH = creep_deets.health
+			creep.MAX_HEALTH = creep_deets.health
 			creep.VALUE  = creep_deets.value
 			creep.DAMAGE = creep_deets.damage
-			$CreepPath/PathFollow2D.add_child(creep)
-			
+			$CreepPath.add_child(creep)
 			timer = creep_deets.period
 		else:
 			timer -= delta
@@ -38,5 +44,5 @@ func _process(delta):
 	queue_redraw()
 
 func _draw():
-	draw_circle(Vector2(0,0), 4, Color(1, 1, 1))
+	draw_circle(self.transform.y, 48, Color(1, 1, 1, 0.125))
 

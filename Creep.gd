@@ -1,5 +1,6 @@
-extends Node2D
-@onready var _follow :PathFollow2D = get_parent()
+#extends Node2D
+extends PathFollow2D
+#@onready var _follow :PathFollow2D = get_parent()
 
 @export var SPEED      : float =  64.0
 @export var MAX_HEALTH : float = 128.0
@@ -7,19 +8,21 @@ extends Node2D
 @export var VALUE      : float =   3.0
 @export var DAMAGE     : float =   4.0
 
-func _physics_process(delta):
-	_follow.set_progress(_follow.get_progress() + SPEED * delta)
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Area2D.add_to_group("creep")
 	pass # Replace with function body.
 	
+	
+func _physics_process(delta):
+	set_progress(get_progress() + SPEED * delta)
+
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#HEALTH -= delta
-	if _follow.progress_ratio >= 1.0:
+	if progress_ratio >= 1.0:
 		get_tree().current_scene.set_health(-DAMAGE)
 		queue_free()
 		

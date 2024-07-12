@@ -16,7 +16,10 @@ noise = SubResource("FastNoiseLite_ssrcw")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkfrl"]
 size = Vector2(16, 16)
 
-[node name="Creep" type="Node2D"]
+[node name="Creep" type="PathFollow2D"]
+rotates = false
+cubic_interp = false
+loop = false
 script = ExtResource("1_551rn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,9 +1,9 @@
 extends Node2D
 @onready var _follow :PathFollow2D = get_parent()
-var _speed :float = 600.0
+var _speed :float = 64.0
 
-var MAX_HEALTH = 30.0;
-var HEALTH     = 20.0;
+var MAX_HEALTH = 128.0;
+var HEALTH     = 128.0;
 var VALUE      =  3.0;
 var DAMAGE     =  4.0;
 

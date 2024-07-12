@@ -1,14 +1,14 @@
 extends Node2D
 @onready var _follow :PathFollow2D = get_parent()
-var _speed :float = 64.0
 
-var MAX_HEALTH = 128.0;
-var HEALTH     = 128.0;
-var VALUE      =  3.0;
-var DAMAGE     =  4.0;
+@export var SPEED      : float =  64.0
+@export var MAX_HEALTH : float = 128.0
+@export var HEALTH     : float = 128.0
+@export var VALUE      : float =   3.0
+@export var DAMAGE     : float =   4.0
 
 func _physics_process(delta):
-	_follow.set_progress(_follow.get_progress() + _speed * delta)
+	_follow.set_progress(_follow.get_progress() + SPEED * delta)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

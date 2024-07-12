@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bu1tu13ni0y80"]
+[gd_scene load_steps=11 format=3 uid="uid://bu1tu13ni0y80"]
 
 [ext_resource type="Script" path="res://base.gd" id="1_q3bun"]
 [ext_resource type="Texture2D" uid="uid://dlnm8wvs0cjb" path="res://level.png" id="2_yk70w"]
-[ext_resource type="Script" path="res://Creep.gd" id="3_wvatw"]
+[ext_resource type="Script" path="res://CreepSpawner.gd" id="3_fkqg3"]
 [ext_resource type="Script" path="res://Tower.gd" id="4_b58bo"]
 
 [sub_resource type="Curve2D" id="Curve2D_cgbak"]
@@ -11,20 +11,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 144, -32, 0, 0, 0, 0, 144, 48, 0, 0, 0, 0, 48, 48, 0, 0, 0, 0, 48, 144, 0, 0, 0, 0, 112, 144, 0, 0, 0, 0, 112, 112, 0, 0, 0, 0, 240, 112, 0, 0, 0, 0, 240, 240, 0, 0, 0, 0, 48, 240, 0, 0, 0, 0, 48, 464, 0, 0, 0, 0, 144, 464, 0, 0, 0, 0, 144, 304, 0, 0, 0, 0, 304, 304, 0, 0, 0, 0, 304, 240, 0, 0, 0, 0, 368, 240, 0, 0, 0, 0, 368, 400, 0, 0, 0, 0, 240, 400, 0, 0, 0, 0, 240, 464, 0, 0, 0, 0, 464, 464, 0, 0, 0, 0, 464, 368, 0, 0, 0, 0, 432, 368, 0, 0, 0, 0, 432, 306, 0, 0, 0, 0, 464, 306, 0, 0, 0, 0, 464, 176, 0, 0, 0, 0, 336, 176, 0, 0, 0, 0, 336, 48, 0, 0, 0, 0, 240, 48, 0, 0, 0, 0, 240, -128)
 }
 point_count = 28
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_ssrcw"]
-frequency = 0.05
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7x8io"]
-width = 16
-height = 16
-in_3d_space = true
-generate_mipmaps = false
-bump_strength = 3.0
-noise = SubResource("FastNoiseLite_ssrcw")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkfrl"]
-size = Vector2(16, 16)
 
 [sub_resource type="Gradient" id="Gradient_tw3jo"]
 offsets = PackedFloat32Array(0.185754, 0.349162, 0.797486)
@@ -56,25 +42,21 @@ y_sort_enabled = true
 position = Vector2(256, 256)
 texture = ExtResource("2_yk70w")
 
-[node name="CreepPath" type="Path2D" parent="."]
+[node name="CreepSpawner" type="Node2D" parent="."]
+position = Vector2(144, -32)
+rotation = 1.5708
+script = ExtResource("3_fkqg3")
+
+[node name="CreepPath" type="Path2D" parent="CreepSpawner"]
+position = Vector2(32, 144)
+rotation = -1.5708
 curve = SubResource("Curve2D_cgbak")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="CreepPath"]
+[node name="PathFollow2D" type="PathFollow2D" parent="CreepSpawner/CreepPath"]
 position = Vector2(144, -32)
 rotation = 1.5708
 rotates = false
 loop = false
-
-[node name="Creep" type="Node2D" parent="CreepPath/PathFollow2D"]
-script = ExtResource("3_wvatw")
-
-[node name="Sprite2D" type="Sprite2D" parent="CreepPath/PathFollow2D/Creep"]
-texture = SubResource("NoiseTexture2D_7x8io")
-
-[node name="Area2D" type="Area2D" parent="CreepPath/PathFollow2D/Creep"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CreepPath/PathFollow2D/Creep/Area2D"]
-shape = SubResource("RectangleShape2D_fkfrl")
 
 [node name="Tower" type="Node2D" parent="."]
 position = Vector2(80, 112)

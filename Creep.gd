@@ -38,15 +38,15 @@ func damage(value):
 
 func _draw():
 	draw_line(
-		self.transform.x + Vector2(18, -8),
-		self.transform.x + Vector2(18, 8),
+		Vector2(10, -8),
+		Vector2(10, 8),
 		Color(1.0, 0.0, 0.0),
 		2.0
 	)
 	
 	draw_line(
-		self.transform.x + Vector2(18, -8),
-		self.transform.x + Vector2(18, -8 + 16 * HEALTH / MAX_HEALTH),
+		Vector2(10, -8),
+		Vector2(10, -8 + 16 * HEALTH / MAX_HEALTH),
 		Color(0.0, 1.0, 0.0),
 		2.0
 	)

@@ -6,7 +6,7 @@ var creep_scene = preload("res://creep.tscn")
 var timer = 0.0
 
 var wave = [
-	{ "speed" : 24.0, "health" :  4, "value" : 3, "damage" : 1, "period" : 2.0 },
+	{ "speed" : 128.0, "health" :  4, "value" : 3, "damage" : 1, "period" : 2.0 },
 	{ "speed" : 24.0, "health" :  4, "value" : 3, "damage" : 1, "period" : 2.0 },
 	{ "speed" : 24.0, "health" :  4, "value" : 3, "damage" : 1, "period" : 2.0 },
 	{ "speed" : 24.0, "health" :  4, "value" : 3, "damage" : 1, "period" : 6.0 },
@@ -44,5 +44,5 @@ func _process(delta):
 	queue_redraw()
 
 func _draw():
-	draw_circle(self.transform.y, 48, Color(1, 1, 1, 0.125))
+	draw_circle(Vector2(0,0), 48, Color(1, 1, 1, 0.125))
 

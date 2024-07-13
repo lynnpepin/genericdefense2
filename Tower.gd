@@ -1,10 +1,12 @@
 extends Node2D
 
-var RADIUS = 64.0;
-var FIRE_PERIOD = 1.0;
-var FIRE_TIMER  = 1.0;
+var RADIUS = 64.0
+var FIRE_PERIOD = 1.0
+var FIRE_TIMER  = 1.0
 var CREEPS_INSIDE = []
-var DAMAGE      = 3.0;
+var DAMAGE      = 3.0
+
+var FIRING          = false
 
 # Variables for handling mouse events
 var mouse_area_inside = false;
@@ -28,9 +30,12 @@ func _process(delta):
 	if FIRE_TIMER >= FIRE_PERIOD:
 		# can fire
 		if len(CREEPS_INSIDE) > 0:
+			FIRING = true;
 			FIRE_TIMER = 0.0
-			CREEPS_INSIDE[0].get_parent().damage(DAMAGE)
+			var creep = CREEPS_INSIDE[0].get_parent()
+			creep.damage(DAMAGE)
 	else:
+		FIRING = false
 		# can' fire, increase time
 		FIRE_TIMER += delta
 	
@@ -45,7 +50,7 @@ func _process(delta):
 func _draw():
 	if mouse_area_inside:
 		draw_arc(
-			self.transform.y,
+			Vector2(0,0),
 			float(RADIUS),
 			0,
 			2 * PI,
@@ -54,13 +59,27 @@ func _draw():
 			2.0
 		)
 		draw_arc(
-			self.transform.y,
+			Vector2(0,0),
 			float(RADIUS),
 			PI,
 			PI + 2 * PI * (FIRE_TIMER / FIRE_PERIOD),
 			121,
 			Color(1.0, 0.75, 0.125),
 			2.0
+		)
+	## draw fire line
+	if len(CREEPS_INSIDE) > 0:
+		draw_line(
+			Vector2(0,0),
+			CREEPS_INSIDE[0].get_parent().global_position - self.global_position,
+			Color(1.0, 0.0625, 0.125, FIRE_TIMER / ( 2 * FIRE_PERIOD)), #fmod((FIRE_TIMER / FIRE_PERIOD) - 0.0625, 1)),
+			3
+		)
+		draw_line(
+			Vector2(0,0),
+			CREEPS_INSIDE[0].get_parent().global_position - self.global_position,
+			Color(1.0, 0, 0, 0.125 + FIRE_TIMER / FIRE_PERIOD), #fmod((FIRE_TIMER / FIRE_PERIOD) - 0.0625, 1)),
+			1
 		)
 
 func _on_attack_area_entered(area):

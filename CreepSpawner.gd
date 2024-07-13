@@ -18,6 +18,23 @@ var wave = [
 	{ "speed" : 64.0, "health" :  1, "value" : 1, "damage" : 1, "period" : 0.25 },
 	{ "speed" : 64.0, "health" :  1, "value" : 1, "damage" : 1, "period" : 6.0 },
 	{ "speed" : 12.0, "health" : 15, "value" : 6, "damage" : 1, "period" : 1.0 },
+	{ "speed" : 24.0, "health" : 15, "value" : 8, "damage" : 1, "period" : 1.0 },
+	{ "speed" : 24.0, "health" : 16, "value" : 8, "damage" : 1, "period" : 1.0 },
+	{ "speed" : 24.0, "health" : 16, "value" : 8, "damage" : 1, "period" : 1.0 },
+	{ "speed" : 24.0, "health" : 16, "value" : 8, "damage" : 1, "period" : 1.0 },
+	{ "speed" : 24.0, "health" : 20, "value" : 8, "damage" : 1, "period" : 1.0 },
+	{ "speed" : 24.0, "health" : 20, "value" : 8, "damage" : 1, "period" : 1.0 },
+	{ "speed" : 24.0, "health" : 20, "value" : 8, "damage" : 1, "period" : 1.0 },
+	{ "speed" : 24.0, "health" : 24, "value" : 8, "damage" : 1, "period" : 1.0 },
+	{ "speed" : 24.0, "health" : 24, "value" : 8, "damage" : 1, "period" : 1.0 },
+	{ "speed" : 24.0, "health" : 24, "value" : 8, "damage" : 1, "period" : 1.0 },
+	{ "speed" : 48.0, "health" : 30, "value" : 12, "damage" : 1, "period" : 4.0 },
+	{ "speed" : 48.0, "health" : 30, "value" : 12, "damage" : 1, "period" : 8.0 },
+	{ "speed" : 48.0, "health" : 30, "value" : 12, "damage" : 1, "period" : 8.0 },
+	{ "speed" : 48.0, "health" : 30, "value" : 12, "damage" : 1, "period" : 8.0 },
+	{ "speed" : 48.0, "health" : 30, "value" : 12, "damage" : 1, "period" : 8.0 },
+	{ "speed" : 24.0, "health" : 32, "value" : 1600, "damage" : 1, "period" : 12.0 },
+	{ "speed" : 8.0, "health" : 1024, "value" : 8, "damage" : 1, "period" : 1.0 },
 ]
 
 # Called when the node enters the scene tree for the first time.

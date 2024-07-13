@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bu1tu13ni0y80"]
+[gd_scene load_steps=6 format=3 uid="uid://bu1tu13ni0y80"]
 
 [ext_resource type="Script" path="res://base.gd" id="1_q3bun"]
+[ext_resource type="PackedScene" uid="uid://vu1ofdbsx2i3" path="res://tower_spot.tscn" id="2_yiqlv"]
 [ext_resource type="Texture2D" uid="uid://dlnm8wvs0cjb" path="res://level.png" id="2_yk70w"]
 [ext_resource type="Script" path="res://CreepSpawner.gd" id="3_fkqg3"]
-[ext_resource type="Script" path="res://Tower.gd" id="4_b58bo"]
 
 [sub_resource type="Curve2D" id="Curve2D_cgbak"]
 bake_interval = 1.0
@@ -11,26 +11,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 144, -32, 0, 0, 0, 0, 144, 48, 0, 0, 0, 0, 48, 48, 0, 0, 0, 0, 48, 144, 0, 0, 0, 0, 112, 144, 0, 0, 0, 0, 112, 112, 0, 0, 0, 0, 240, 112, 0, 0, 0, 0, 240, 240, 0, 0, 0, 0, 48, 240, 0, 0, 0, 0, 48, 464, 0, 0, 0, 0, 144, 464, 0, 0, 0, 0, 144, 304, 0, 0, 0, 0, 304, 304, 0, 0, 0, 0, 304, 240, 0, 0, 0, 0, 368, 240, 0, 0, 0, 0, 368, 400, 0, 0, 0, 0, 240, 400, 0, 0, 0, 0, 240, 464, 0, 0, 0, 0, 464, 464, 0, 0, 0, 0, 464, 368, 0, 0, 0, 0, 432, 368, 0, 0, 0, 0, 432, 306, 0, 0, 0, 0, 464, 306, 0, 0, 0, 0, 464, 176, 0, 0, 0, 0, 336, 176, 0, 0, 0, 0, 336, 48, 0, 0, 0, 0, 240, 48, 0, 0, 0, 0, 240, -128)
 }
 point_count = 28
-
-[sub_resource type="Gradient" id="Gradient_tw3jo"]
-offsets = PackedFloat32Array(0.185754, 0.349162, 0.797486)
-colors = PackedColorArray(0, 0, 0, 1, 0.0342679, 0.0342679, 0.0342679, 1, 1, 1, 1, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_doj42"]
-frequency = 0.125
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kijvo"]
-width = 16
-height = 16
-seamless = true
-color_ramp = SubResource("Gradient_tw3jo")
-noise = SubResource("FastNoiseLite_doj42")
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_r6eh2"]
-radius = 64.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yqms"]
-size = Vector2(16, 16)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_q3bun")
@@ -58,19 +38,3075 @@ rotation = 1.5708
 rotates = false
 loop = false
 
-[node name="Tower" type="Node2D" parent="."]
+[node name="TowerSpots" type="Node2D" parent="."]
+
+[node name="TowerSpot" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+
+[node name="TowerSpot2" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 0)
+
+[node name="TowerSpot3" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 0)
+
+[node name="TowerSpot4" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 0)
+
+[node name="TowerSpot5" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 0)
+
+[node name="TowerSpot6" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 0)
+
+[node name="TowerSpot7" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 0)
+
+[node name="TowerSpot8" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 0)
+
+[node name="TowerSpot9" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 0)
+
+[node name="TowerSpot10" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 0)
+
+[node name="TowerSpot11" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 0)
+
+[node name="TowerSpot12" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 0)
+
+[node name="TowerSpot13" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 0)
+
+[node name="TowerSpot14" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 0)
+
+[node name="TowerSpot15" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 0)
+
+[node name="TowerSpot16" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 0)
+
+[node name="TowerSpot17" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 0)
+
+[node name="TowerSpot18" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 0)
+
+[node name="TowerSpot19" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 0)
+
+[node name="TowerSpot20" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 0)
+
+[node name="TowerSpot21" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 0)
+
+[node name="TowerSpot22" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 0)
+
+[node name="TowerSpot23" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 0)
+
+[node name="TowerSpot24" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 0)
+
+[node name="TowerSpot25" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 0)
+
+[node name="TowerSpot26" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 0)
+
+[node name="TowerSpot27" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 0)
+
+[node name="TowerSpot28" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 0)
+
+[node name="TowerSpot29" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 0)
+
+[node name="TowerSpot30" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 0)
+
+[node name="TowerSpot31" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 0)
+
+[node name="TowerSpot32" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 0)
+
+[node name="TowerSpot33" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 16)
+
+[node name="TowerSpot34" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 16)
+
+[node name="TowerSpot35" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 16)
+
+[node name="TowerSpot36" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 16)
+
+[node name="TowerSpot37" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 16)
+
+[node name="TowerSpot38" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 16)
+
+[node name="TowerSpot39" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 16)
+
+[node name="TowerSpot40" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 16)
+
+[node name="TowerSpot41" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 16)
+
+[node name="TowerSpot42" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 16)
+
+[node name="TowerSpot43" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 16)
+
+[node name="TowerSpot44" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 16)
+
+[node name="TowerSpot45" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 16)
+
+[node name="TowerSpot46" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 16)
+
+[node name="TowerSpot47" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 16)
+
+[node name="TowerSpot48" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 16)
+
+[node name="TowerSpot49" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 16)
+
+[node name="TowerSpot50" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 16)
+
+[node name="TowerSpot51" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 16)
+
+[node name="TowerSpot52" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 16)
+
+[node name="TowerSpot53" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 16)
+
+[node name="TowerSpot54" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 16)
+
+[node name="TowerSpot55" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 16)
+
+[node name="TowerSpot56" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 16)
+
+[node name="TowerSpot57" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 16)
+
+[node name="TowerSpot58" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 16)
+
+[node name="TowerSpot59" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 16)
+
+[node name="TowerSpot60" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 16)
+
+[node name="TowerSpot61" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 16)
+
+[node name="TowerSpot62" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 16)
+
+[node name="TowerSpot63" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 16)
+
+[node name="TowerSpot64" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 16)
+
+[node name="TowerSpot65" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 32)
+
+[node name="TowerSpot66" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 32)
+
+[node name="TowerSpot67" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 32)
+
+[node name="TowerSpot68" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 32)
+
+[node name="TowerSpot69" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 32)
+
+[node name="TowerSpot70" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 32)
+
+[node name="TowerSpot71" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 32)
+
+[node name="TowerSpot72" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 32)
+
+[node name="TowerSpot73" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 32)
+
+[node name="TowerSpot74" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 32)
+
+[node name="TowerSpot75" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 32)
+
+[node name="TowerSpot76" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 32)
+
+[node name="TowerSpot77" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 32)
+
+[node name="TowerSpot78" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 32)
+
+[node name="TowerSpot79" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 32)
+
+[node name="TowerSpot80" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 32)
+
+[node name="TowerSpot81" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 32)
+
+[node name="TowerSpot82" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 32)
+
+[node name="TowerSpot83" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 32)
+
+[node name="TowerSpot84" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 32)
+
+[node name="TowerSpot85" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 32)
+
+[node name="TowerSpot86" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 32)
+
+[node name="TowerSpot87" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 32)
+
+[node name="TowerSpot88" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 32)
+
+[node name="TowerSpot89" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 32)
+
+[node name="TowerSpot90" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 32)
+
+[node name="TowerSpot91" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 32)
+
+[node name="TowerSpot92" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 32)
+
+[node name="TowerSpot93" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 32)
+
+[node name="TowerSpot94" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 32)
+
+[node name="TowerSpot95" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 32)
+
+[node name="TowerSpot96" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 32)
+
+[node name="TowerSpot97" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 48)
+
+[node name="TowerSpot98" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 48)
+
+[node name="TowerSpot99" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 48)
+
+[node name="TowerSpot100" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 48)
+
+[node name="TowerSpot101" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 48)
+
+[node name="TowerSpot102" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 48)
+
+[node name="TowerSpot103" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 48)
+
+[node name="TowerSpot104" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 48)
+
+[node name="TowerSpot105" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 48)
+
+[node name="TowerSpot106" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 48)
+
+[node name="TowerSpot107" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 48)
+
+[node name="TowerSpot108" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 48)
+
+[node name="TowerSpot109" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 48)
+
+[node name="TowerSpot110" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 48)
+
+[node name="TowerSpot111" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 48)
+
+[node name="TowerSpot112" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 48)
+
+[node name="TowerSpot113" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 48)
+
+[node name="TowerSpot114" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 48)
+
+[node name="TowerSpot115" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 48)
+
+[node name="TowerSpot116" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 48)
+
+[node name="TowerSpot117" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 48)
+
+[node name="TowerSpot118" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 48)
+
+[node name="TowerSpot119" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 48)
+
+[node name="TowerSpot120" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 48)
+
+[node name="TowerSpot121" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 48)
+
+[node name="TowerSpot122" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 48)
+
+[node name="TowerSpot123" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 48)
+
+[node name="TowerSpot124" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 48)
+
+[node name="TowerSpot125" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 48)
+
+[node name="TowerSpot126" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 48)
+
+[node name="TowerSpot127" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 48)
+
+[node name="TowerSpot128" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 48)
+
+[node name="TowerSpot129" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 64)
+
+[node name="TowerSpot130" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 64)
+
+[node name="TowerSpot131" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 64)
+
+[node name="TowerSpot132" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 64)
+
+[node name="TowerSpot133" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 64)
+
+[node name="TowerSpot134" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 64)
+
+[node name="TowerSpot135" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 64)
+
+[node name="TowerSpot136" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 64)
+
+[node name="TowerSpot137" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 64)
+
+[node name="TowerSpot138" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 64)
+
+[node name="TowerSpot139" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 64)
+
+[node name="TowerSpot140" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 64)
+
+[node name="TowerSpot141" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 64)
+
+[node name="TowerSpot142" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 64)
+
+[node name="TowerSpot143" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 64)
+
+[node name="TowerSpot144" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 64)
+
+[node name="TowerSpot145" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 64)
+
+[node name="TowerSpot146" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 64)
+
+[node name="TowerSpot147" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 64)
+
+[node name="TowerSpot148" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 64)
+
+[node name="TowerSpot149" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 64)
+
+[node name="TowerSpot150" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 64)
+
+[node name="TowerSpot151" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 64)
+
+[node name="TowerSpot152" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 64)
+
+[node name="TowerSpot153" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 64)
+
+[node name="TowerSpot154" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 64)
+
+[node name="TowerSpot155" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 64)
+
+[node name="TowerSpot156" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 64)
+
+[node name="TowerSpot157" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 64)
+
+[node name="TowerSpot158" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 64)
+
+[node name="TowerSpot159" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 64)
+
+[node name="TowerSpot160" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 64)
+
+[node name="TowerSpot161" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 80)
+
+[node name="TowerSpot162" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 80)
+
+[node name="TowerSpot163" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 80)
+
+[node name="TowerSpot164" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 80)
+
+[node name="TowerSpot165" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 80)
+
+[node name="TowerSpot166" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 80)
+
+[node name="TowerSpot167" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 80)
+
+[node name="TowerSpot168" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 80)
+
+[node name="TowerSpot169" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 80)
+
+[node name="TowerSpot170" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 80)
+
+[node name="TowerSpot171" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 80)
+
+[node name="TowerSpot172" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 80)
+
+[node name="TowerSpot173" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 80)
+
+[node name="TowerSpot174" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 80)
+
+[node name="TowerSpot175" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 80)
+
+[node name="TowerSpot176" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 80)
+
+[node name="TowerSpot177" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 80)
+
+[node name="TowerSpot178" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 80)
+
+[node name="TowerSpot179" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 80)
+
+[node name="TowerSpot180" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 80)
+
+[node name="TowerSpot181" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 80)
+
+[node name="TowerSpot182" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 80)
+
+[node name="TowerSpot183" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 80)
+
+[node name="TowerSpot184" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 80)
+
+[node name="TowerSpot185" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 80)
+
+[node name="TowerSpot186" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 80)
+
+[node name="TowerSpot187" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 80)
+
+[node name="TowerSpot188" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 80)
+
+[node name="TowerSpot189" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 80)
+
+[node name="TowerSpot190" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 80)
+
+[node name="TowerSpot191" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 80)
+
+[node name="TowerSpot192" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 80)
+
+[node name="TowerSpot193" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 96)
+
+[node name="TowerSpot194" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 96)
+
+[node name="TowerSpot195" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 96)
+
+[node name="TowerSpot196" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 96)
+
+[node name="TowerSpot197" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 96)
+
+[node name="TowerSpot198" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 96)
+
+[node name="TowerSpot199" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 96)
+
+[node name="TowerSpot200" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 96)
+
+[node name="TowerSpot201" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 96)
+
+[node name="TowerSpot202" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 96)
+
+[node name="TowerSpot203" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 96)
+
+[node name="TowerSpot204" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 96)
+
+[node name="TowerSpot205" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 96)
+
+[node name="TowerSpot206" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 96)
+
+[node name="TowerSpot207" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 96)
+
+[node name="TowerSpot208" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 96)
+
+[node name="TowerSpot209" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 96)
+
+[node name="TowerSpot210" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 96)
+
+[node name="TowerSpot211" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 96)
+
+[node name="TowerSpot212" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 96)
+
+[node name="TowerSpot213" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 96)
+
+[node name="TowerSpot214" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 96)
+
+[node name="TowerSpot215" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 96)
+
+[node name="TowerSpot216" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 96)
+
+[node name="TowerSpot217" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 96)
+
+[node name="TowerSpot218" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 96)
+
+[node name="TowerSpot219" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 96)
+
+[node name="TowerSpot220" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 96)
+
+[node name="TowerSpot221" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 96)
+
+[node name="TowerSpot222" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 96)
+
+[node name="TowerSpot223" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 96)
+
+[node name="TowerSpot224" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 96)
+
+[node name="TowerSpot225" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 112)
+
+[node name="TowerSpot226" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 112)
+
+[node name="TowerSpot227" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 112)
+
+[node name="TowerSpot228" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 112)
+
+[node name="TowerSpot229" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 112)
+
+[node name="TowerSpot230" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
 position = Vector2(80, 112)
-script = ExtResource("4_b58bo")
 
-[node name="Sprite2D" type="Sprite2D" parent="Tower"]
-texture = SubResource("NoiseTexture2D_kijvo")
+[node name="TowerSpot231" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 112)
 
-[node name="AttackArea" type="Area2D" parent="Tower"]
+[node name="TowerSpot232" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 112)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/AttackArea"]
-shape = SubResource("CircleShape2D_r6eh2")
+[node name="TowerSpot233" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 112)
 
-[node name="TowerArea" type="Area2D" parent="Tower"]
+[node name="TowerSpot234" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 112)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/TowerArea"]
-shape = SubResource("RectangleShape2D_0yqms")
+[node name="TowerSpot235" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 112)
+
+[node name="TowerSpot236" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 112)
+
+[node name="TowerSpot237" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 112)
+
+[node name="TowerSpot238" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 112)
+
+[node name="TowerSpot239" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 112)
+
+[node name="TowerSpot240" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 112)
+
+[node name="TowerSpot241" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 112)
+
+[node name="TowerSpot242" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 112)
+
+[node name="TowerSpot243" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 112)
+
+[node name="TowerSpot244" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 112)
+
+[node name="TowerSpot245" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 112)
+
+[node name="TowerSpot246" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 112)
+
+[node name="TowerSpot247" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 112)
+
+[node name="TowerSpot248" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 112)
+
+[node name="TowerSpot249" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 112)
+
+[node name="TowerSpot250" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 112)
+
+[node name="TowerSpot251" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 112)
+
+[node name="TowerSpot252" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 112)
+
+[node name="TowerSpot253" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 112)
+
+[node name="TowerSpot254" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 112)
+
+[node name="TowerSpot255" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 112)
+
+[node name="TowerSpot256" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 112)
+
+[node name="TowerSpot257" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 128)
+
+[node name="TowerSpot258" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 128)
+
+[node name="TowerSpot259" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 128)
+
+[node name="TowerSpot260" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 128)
+
+[node name="TowerSpot261" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 128)
+
+[node name="TowerSpot262" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 128)
+
+[node name="TowerSpot263" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 128)
+
+[node name="TowerSpot264" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 128)
+
+[node name="TowerSpot265" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 128)
+
+[node name="TowerSpot266" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 128)
+
+[node name="TowerSpot267" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 128)
+
+[node name="TowerSpot268" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 128)
+
+[node name="TowerSpot269" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 128)
+
+[node name="TowerSpot270" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 128)
+
+[node name="TowerSpot271" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 128)
+
+[node name="TowerSpot272" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 128)
+
+[node name="TowerSpot273" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 128)
+
+[node name="TowerSpot274" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 128)
+
+[node name="TowerSpot275" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 128)
+
+[node name="TowerSpot276" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 128)
+
+[node name="TowerSpot277" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 128)
+
+[node name="TowerSpot278" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 128)
+
+[node name="TowerSpot279" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 128)
+
+[node name="TowerSpot280" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 128)
+
+[node name="TowerSpot281" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 128)
+
+[node name="TowerSpot282" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 128)
+
+[node name="TowerSpot283" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 128)
+
+[node name="TowerSpot284" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 128)
+
+[node name="TowerSpot285" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 128)
+
+[node name="TowerSpot286" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 128)
+
+[node name="TowerSpot287" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 128)
+
+[node name="TowerSpot288" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 128)
+
+[node name="TowerSpot289" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 144)
+
+[node name="TowerSpot290" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 144)
+
+[node name="TowerSpot291" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 144)
+
+[node name="TowerSpot292" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 144)
+
+[node name="TowerSpot293" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 144)
+
+[node name="TowerSpot294" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 144)
+
+[node name="TowerSpot295" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 144)
+
+[node name="TowerSpot296" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 144)
+
+[node name="TowerSpot297" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 144)
+
+[node name="TowerSpot298" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 144)
+
+[node name="TowerSpot299" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 144)
+
+[node name="TowerSpot300" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 144)
+
+[node name="TowerSpot301" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 144)
+
+[node name="TowerSpot302" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 144)
+
+[node name="TowerSpot303" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 144)
+
+[node name="TowerSpot304" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 144)
+
+[node name="TowerSpot305" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 144)
+
+[node name="TowerSpot306" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 144)
+
+[node name="TowerSpot307" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 144)
+
+[node name="TowerSpot308" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 144)
+
+[node name="TowerSpot309" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 144)
+
+[node name="TowerSpot310" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 144)
+
+[node name="TowerSpot311" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 144)
+
+[node name="TowerSpot312" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 144)
+
+[node name="TowerSpot313" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 144)
+
+[node name="TowerSpot314" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 144)
+
+[node name="TowerSpot315" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 144)
+
+[node name="TowerSpot316" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 144)
+
+[node name="TowerSpot317" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 144)
+
+[node name="TowerSpot318" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 144)
+
+[node name="TowerSpot319" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 144)
+
+[node name="TowerSpot320" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 144)
+
+[node name="TowerSpot321" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 160)
+
+[node name="TowerSpot322" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 160)
+
+[node name="TowerSpot323" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 160)
+
+[node name="TowerSpot324" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 160)
+
+[node name="TowerSpot325" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 160)
+
+[node name="TowerSpot326" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 160)
+
+[node name="TowerSpot327" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 160)
+
+[node name="TowerSpot328" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 160)
+
+[node name="TowerSpot329" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 160)
+
+[node name="TowerSpot330" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 160)
+
+[node name="TowerSpot331" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 160)
+
+[node name="TowerSpot332" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 160)
+
+[node name="TowerSpot333" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 160)
+
+[node name="TowerSpot334" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 160)
+
+[node name="TowerSpot335" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 160)
+
+[node name="TowerSpot336" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 160)
+
+[node name="TowerSpot337" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 160)
+
+[node name="TowerSpot338" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 160)
+
+[node name="TowerSpot339" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 160)
+
+[node name="TowerSpot340" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 160)
+
+[node name="TowerSpot341" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 160)
+
+[node name="TowerSpot342" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 160)
+
+[node name="TowerSpot343" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 160)
+
+[node name="TowerSpot344" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 160)
+
+[node name="TowerSpot345" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 160)
+
+[node name="TowerSpot346" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 160)
+
+[node name="TowerSpot347" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 160)
+
+[node name="TowerSpot348" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 160)
+
+[node name="TowerSpot349" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 160)
+
+[node name="TowerSpot350" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 160)
+
+[node name="TowerSpot351" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 160)
+
+[node name="TowerSpot352" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 160)
+
+[node name="TowerSpot353" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 176)
+
+[node name="TowerSpot354" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 176)
+
+[node name="TowerSpot355" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 176)
+
+[node name="TowerSpot356" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 176)
+
+[node name="TowerSpot357" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 176)
+
+[node name="TowerSpot358" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 176)
+
+[node name="TowerSpot359" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 176)
+
+[node name="TowerSpot360" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 176)
+
+[node name="TowerSpot361" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 176)
+
+[node name="TowerSpot362" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 176)
+
+[node name="TowerSpot363" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 176)
+
+[node name="TowerSpot364" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 176)
+
+[node name="TowerSpot365" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 176)
+
+[node name="TowerSpot366" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 176)
+
+[node name="TowerSpot367" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 176)
+
+[node name="TowerSpot368" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 176)
+
+[node name="TowerSpot369" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 176)
+
+[node name="TowerSpot370" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 176)
+
+[node name="TowerSpot371" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 176)
+
+[node name="TowerSpot372" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 176)
+
+[node name="TowerSpot373" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 176)
+
+[node name="TowerSpot374" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 176)
+
+[node name="TowerSpot375" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 176)
+
+[node name="TowerSpot376" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 176)
+
+[node name="TowerSpot377" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 176)
+
+[node name="TowerSpot378" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 176)
+
+[node name="TowerSpot379" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 176)
+
+[node name="TowerSpot380" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 176)
+
+[node name="TowerSpot381" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 176)
+
+[node name="TowerSpot382" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 176)
+
+[node name="TowerSpot383" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 176)
+
+[node name="TowerSpot384" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 176)
+
+[node name="TowerSpot385" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 192)
+
+[node name="TowerSpot386" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 192)
+
+[node name="TowerSpot387" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 192)
+
+[node name="TowerSpot388" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 192)
+
+[node name="TowerSpot389" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 192)
+
+[node name="TowerSpot390" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 192)
+
+[node name="TowerSpot391" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 192)
+
+[node name="TowerSpot392" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 192)
+
+[node name="TowerSpot393" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 192)
+
+[node name="TowerSpot394" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 192)
+
+[node name="TowerSpot395" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 192)
+
+[node name="TowerSpot396" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 192)
+
+[node name="TowerSpot397" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 192)
+
+[node name="TowerSpot398" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 192)
+
+[node name="TowerSpot399" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 192)
+
+[node name="TowerSpot400" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 192)
+
+[node name="TowerSpot401" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 192)
+
+[node name="TowerSpot402" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 192)
+
+[node name="TowerSpot403" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 192)
+
+[node name="TowerSpot404" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 192)
+
+[node name="TowerSpot405" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 192)
+
+[node name="TowerSpot406" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 192)
+
+[node name="TowerSpot407" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 192)
+
+[node name="TowerSpot408" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 192)
+
+[node name="TowerSpot409" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 192)
+
+[node name="TowerSpot410" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 192)
+
+[node name="TowerSpot411" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 192)
+
+[node name="TowerSpot412" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 192)
+
+[node name="TowerSpot413" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 192)
+
+[node name="TowerSpot414" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 192)
+
+[node name="TowerSpot415" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 192)
+
+[node name="TowerSpot416" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 192)
+
+[node name="TowerSpot417" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 208)
+
+[node name="TowerSpot418" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 208)
+
+[node name="TowerSpot419" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 208)
+
+[node name="TowerSpot420" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 208)
+
+[node name="TowerSpot421" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 208)
+
+[node name="TowerSpot422" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 208)
+
+[node name="TowerSpot423" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 208)
+
+[node name="TowerSpot424" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 208)
+
+[node name="TowerSpot425" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 208)
+
+[node name="TowerSpot426" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 208)
+
+[node name="TowerSpot427" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 208)
+
+[node name="TowerSpot428" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 208)
+
+[node name="TowerSpot429" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 208)
+
+[node name="TowerSpot430" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 208)
+
+[node name="TowerSpot431" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 208)
+
+[node name="TowerSpot432" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 208)
+
+[node name="TowerSpot433" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 208)
+
+[node name="TowerSpot434" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 208)
+
+[node name="TowerSpot435" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 208)
+
+[node name="TowerSpot436" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 208)
+
+[node name="TowerSpot437" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 208)
+
+[node name="TowerSpot438" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 208)
+
+[node name="TowerSpot439" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 208)
+
+[node name="TowerSpot440" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 208)
+
+[node name="TowerSpot441" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 208)
+
+[node name="TowerSpot442" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 208)
+
+[node name="TowerSpot443" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 208)
+
+[node name="TowerSpot444" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 208)
+
+[node name="TowerSpot445" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 208)
+
+[node name="TowerSpot446" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 208)
+
+[node name="TowerSpot447" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 208)
+
+[node name="TowerSpot448" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 208)
+
+[node name="TowerSpot449" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 224)
+
+[node name="TowerSpot450" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 224)
+
+[node name="TowerSpot451" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 224)
+
+[node name="TowerSpot452" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 224)
+
+[node name="TowerSpot453" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 224)
+
+[node name="TowerSpot454" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 224)
+
+[node name="TowerSpot455" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 224)
+
+[node name="TowerSpot456" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 224)
+
+[node name="TowerSpot457" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 224)
+
+[node name="TowerSpot458" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 224)
+
+[node name="TowerSpot459" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 224)
+
+[node name="TowerSpot460" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 224)
+
+[node name="TowerSpot461" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 224)
+
+[node name="TowerSpot462" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 224)
+
+[node name="TowerSpot463" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 224)
+
+[node name="TowerSpot464" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 224)
+
+[node name="TowerSpot465" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 224)
+
+[node name="TowerSpot466" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 224)
+
+[node name="TowerSpot467" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 224)
+
+[node name="TowerSpot468" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 224)
+
+[node name="TowerSpot469" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 224)
+
+[node name="TowerSpot470" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 224)
+
+[node name="TowerSpot471" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 224)
+
+[node name="TowerSpot472" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 224)
+
+[node name="TowerSpot473" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 224)
+
+[node name="TowerSpot474" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 224)
+
+[node name="TowerSpot475" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 224)
+
+[node name="TowerSpot476" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 224)
+
+[node name="TowerSpot477" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 224)
+
+[node name="TowerSpot478" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 224)
+
+[node name="TowerSpot479" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 224)
+
+[node name="TowerSpot480" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 224)
+
+[node name="TowerSpot481" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 240)
+
+[node name="TowerSpot482" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 240)
+
+[node name="TowerSpot483" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 240)
+
+[node name="TowerSpot484" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 240)
+
+[node name="TowerSpot485" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 240)
+
+[node name="TowerSpot486" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 240)
+
+[node name="TowerSpot487" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 240)
+
+[node name="TowerSpot488" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 240)
+
+[node name="TowerSpot489" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 240)
+
+[node name="TowerSpot490" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 240)
+
+[node name="TowerSpot491" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 240)
+
+[node name="TowerSpot492" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 240)
+
+[node name="TowerSpot493" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 240)
+
+[node name="TowerSpot494" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 240)
+
+[node name="TowerSpot495" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 240)
+
+[node name="TowerSpot496" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 240)
+
+[node name="TowerSpot497" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 240)
+
+[node name="TowerSpot498" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 240)
+
+[node name="TowerSpot499" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 240)
+
+[node name="TowerSpot500" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 240)
+
+[node name="TowerSpot501" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 240)
+
+[node name="TowerSpot502" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 240)
+
+[node name="TowerSpot503" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 240)
+
+[node name="TowerSpot504" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 240)
+
+[node name="TowerSpot505" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 240)
+
+[node name="TowerSpot506" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 240)
+
+[node name="TowerSpot507" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 240)
+
+[node name="TowerSpot508" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 240)
+
+[node name="TowerSpot509" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 240)
+
+[node name="TowerSpot510" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 240)
+
+[node name="TowerSpot511" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 240)
+
+[node name="TowerSpot512" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 240)
+
+[node name="TowerSpot513" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 256)
+
+[node name="TowerSpot514" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 256)
+
+[node name="TowerSpot515" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 256)
+
+[node name="TowerSpot516" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 256)
+
+[node name="TowerSpot517" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 256)
+
+[node name="TowerSpot518" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 256)
+
+[node name="TowerSpot519" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 256)
+
+[node name="TowerSpot520" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 256)
+
+[node name="TowerSpot521" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 256)
+
+[node name="TowerSpot522" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 256)
+
+[node name="TowerSpot523" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 256)
+
+[node name="TowerSpot524" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 256)
+
+[node name="TowerSpot525" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 256)
+
+[node name="TowerSpot526" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 256)
+
+[node name="TowerSpot527" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 256)
+
+[node name="TowerSpot528" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 256)
+
+[node name="TowerSpot529" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 256)
+
+[node name="TowerSpot530" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 256)
+
+[node name="TowerSpot531" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 256)
+
+[node name="TowerSpot532" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 256)
+
+[node name="TowerSpot533" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 256)
+
+[node name="TowerSpot534" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 256)
+
+[node name="TowerSpot535" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 256)
+
+[node name="TowerSpot536" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 256)
+
+[node name="TowerSpot537" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 256)
+
+[node name="TowerSpot538" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 256)
+
+[node name="TowerSpot539" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 256)
+
+[node name="TowerSpot540" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 256)
+
+[node name="TowerSpot541" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 256)
+
+[node name="TowerSpot542" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 256)
+
+[node name="TowerSpot543" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 256)
+
+[node name="TowerSpot544" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 256)
+
+[node name="TowerSpot545" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 272)
+
+[node name="TowerSpot546" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 272)
+
+[node name="TowerSpot547" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 272)
+
+[node name="TowerSpot548" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 272)
+
+[node name="TowerSpot549" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 272)
+
+[node name="TowerSpot550" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 272)
+
+[node name="TowerSpot551" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 272)
+
+[node name="TowerSpot552" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 272)
+
+[node name="TowerSpot553" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 272)
+
+[node name="TowerSpot554" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 272)
+
+[node name="TowerSpot555" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 272)
+
+[node name="TowerSpot556" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 272)
+
+[node name="TowerSpot557" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 272)
+
+[node name="TowerSpot558" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 272)
+
+[node name="TowerSpot559" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 272)
+
+[node name="TowerSpot560" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 272)
+
+[node name="TowerSpot561" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 272)
+
+[node name="TowerSpot562" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 272)
+
+[node name="TowerSpot563" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 272)
+
+[node name="TowerSpot564" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 272)
+
+[node name="TowerSpot565" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 272)
+
+[node name="TowerSpot566" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 272)
+
+[node name="TowerSpot567" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 272)
+
+[node name="TowerSpot568" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 272)
+
+[node name="TowerSpot569" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 272)
+
+[node name="TowerSpot570" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 272)
+
+[node name="TowerSpot571" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 272)
+
+[node name="TowerSpot572" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 272)
+
+[node name="TowerSpot573" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 272)
+
+[node name="TowerSpot574" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 272)
+
+[node name="TowerSpot575" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 272)
+
+[node name="TowerSpot576" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 272)
+
+[node name="TowerSpot577" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 288)
+
+[node name="TowerSpot578" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 288)
+
+[node name="TowerSpot579" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 288)
+
+[node name="TowerSpot580" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 288)
+
+[node name="TowerSpot581" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 288)
+
+[node name="TowerSpot582" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 288)
+
+[node name="TowerSpot583" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 288)
+
+[node name="TowerSpot584" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 288)
+
+[node name="TowerSpot585" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 288)
+
+[node name="TowerSpot586" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 288)
+
+[node name="TowerSpot587" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 288)
+
+[node name="TowerSpot588" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 288)
+
+[node name="TowerSpot589" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 288)
+
+[node name="TowerSpot590" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 288)
+
+[node name="TowerSpot591" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 288)
+
+[node name="TowerSpot592" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 288)
+
+[node name="TowerSpot593" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 288)
+
+[node name="TowerSpot594" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 288)
+
+[node name="TowerSpot595" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 288)
+
+[node name="TowerSpot596" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 288)
+
+[node name="TowerSpot597" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 288)
+
+[node name="TowerSpot598" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 288)
+
+[node name="TowerSpot599" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 288)
+
+[node name="TowerSpot600" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 288)
+
+[node name="TowerSpot601" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 288)
+
+[node name="TowerSpot602" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 288)
+
+[node name="TowerSpot603" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 288)
+
+[node name="TowerSpot604" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 288)
+
+[node name="TowerSpot605" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 288)
+
+[node name="TowerSpot606" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 288)
+
+[node name="TowerSpot607" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 288)
+
+[node name="TowerSpot608" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 288)
+
+[node name="TowerSpot609" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 304)
+
+[node name="TowerSpot610" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 304)
+
+[node name="TowerSpot611" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 304)
+
+[node name="TowerSpot612" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 304)
+
+[node name="TowerSpot613" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 304)
+
+[node name="TowerSpot614" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 304)
+
+[node name="TowerSpot615" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 304)
+
+[node name="TowerSpot616" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 304)
+
+[node name="TowerSpot617" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 304)
+
+[node name="TowerSpot618" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 304)
+
+[node name="TowerSpot619" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 304)
+
+[node name="TowerSpot620" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 304)
+
+[node name="TowerSpot621" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 304)
+
+[node name="TowerSpot622" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 304)
+
+[node name="TowerSpot623" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 304)
+
+[node name="TowerSpot624" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 304)
+
+[node name="TowerSpot625" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 304)
+
+[node name="TowerSpot626" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 304)
+
+[node name="TowerSpot627" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 304)
+
+[node name="TowerSpot628" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 304)
+
+[node name="TowerSpot629" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 304)
+
+[node name="TowerSpot630" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 304)
+
+[node name="TowerSpot631" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 304)
+
+[node name="TowerSpot632" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 304)
+
+[node name="TowerSpot633" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 304)
+
+[node name="TowerSpot634" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 304)
+
+[node name="TowerSpot635" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 304)
+
+[node name="TowerSpot636" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 304)
+
+[node name="TowerSpot637" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 304)
+
+[node name="TowerSpot638" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 304)
+
+[node name="TowerSpot639" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 304)
+
+[node name="TowerSpot640" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 304)
+
+[node name="TowerSpot641" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 320)
+
+[node name="TowerSpot642" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 320)
+
+[node name="TowerSpot643" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 320)
+
+[node name="TowerSpot644" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 320)
+
+[node name="TowerSpot645" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 320)
+
+[node name="TowerSpot646" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 320)
+
+[node name="TowerSpot647" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 320)
+
+[node name="TowerSpot648" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 320)
+
+[node name="TowerSpot649" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 320)
+
+[node name="TowerSpot650" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 320)
+
+[node name="TowerSpot651" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 320)
+
+[node name="TowerSpot652" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 320)
+
+[node name="TowerSpot653" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 320)
+
+[node name="TowerSpot654" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 320)
+
+[node name="TowerSpot655" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 320)
+
+[node name="TowerSpot656" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 320)
+
+[node name="TowerSpot657" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 320)
+
+[node name="TowerSpot658" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 320)
+
+[node name="TowerSpot659" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 320)
+
+[node name="TowerSpot660" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 320)
+
+[node name="TowerSpot661" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 320)
+
+[node name="TowerSpot662" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 320)
+
+[node name="TowerSpot663" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 320)
+
+[node name="TowerSpot664" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 320)
+
+[node name="TowerSpot665" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 320)
+
+[node name="TowerSpot666" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 320)
+
+[node name="TowerSpot667" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 320)
+
+[node name="TowerSpot668" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 320)
+
+[node name="TowerSpot669" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 320)
+
+[node name="TowerSpot670" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 320)
+
+[node name="TowerSpot671" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 320)
+
+[node name="TowerSpot672" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 320)
+
+[node name="TowerSpot673" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 336)
+
+[node name="TowerSpot674" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 336)
+
+[node name="TowerSpot675" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 336)
+
+[node name="TowerSpot676" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 336)
+
+[node name="TowerSpot677" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 336)
+
+[node name="TowerSpot678" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 336)
+
+[node name="TowerSpot679" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 336)
+
+[node name="TowerSpot680" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 336)
+
+[node name="TowerSpot681" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 336)
+
+[node name="TowerSpot682" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 336)
+
+[node name="TowerSpot683" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 336)
+
+[node name="TowerSpot684" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 336)
+
+[node name="TowerSpot685" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 336)
+
+[node name="TowerSpot686" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 336)
+
+[node name="TowerSpot687" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 336)
+
+[node name="TowerSpot688" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 336)
+
+[node name="TowerSpot689" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 336)
+
+[node name="TowerSpot690" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 336)
+
+[node name="TowerSpot691" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 336)
+
+[node name="TowerSpot692" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 336)
+
+[node name="TowerSpot693" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 336)
+
+[node name="TowerSpot694" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 336)
+
+[node name="TowerSpot695" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 336)
+
+[node name="TowerSpot696" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 336)
+
+[node name="TowerSpot697" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 336)
+
+[node name="TowerSpot698" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 336)
+
+[node name="TowerSpot699" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 336)
+
+[node name="TowerSpot700" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 336)
+
+[node name="TowerSpot701" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 336)
+
+[node name="TowerSpot702" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 336)
+
+[node name="TowerSpot703" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 336)
+
+[node name="TowerSpot704" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 336)
+
+[node name="TowerSpot705" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 352)
+
+[node name="TowerSpot706" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 352)
+
+[node name="TowerSpot707" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 352)
+
+[node name="TowerSpot708" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 352)
+
+[node name="TowerSpot709" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 352)
+
+[node name="TowerSpot710" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 352)
+
+[node name="TowerSpot711" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 352)
+
+[node name="TowerSpot712" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 352)
+
+[node name="TowerSpot713" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 352)
+
+[node name="TowerSpot714" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 352)
+
+[node name="TowerSpot715" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 352)
+
+[node name="TowerSpot716" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 352)
+
+[node name="TowerSpot717" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 352)
+
+[node name="TowerSpot718" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 352)
+
+[node name="TowerSpot719" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 352)
+
+[node name="TowerSpot720" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 352)
+
+[node name="TowerSpot721" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 352)
+
+[node name="TowerSpot722" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 352)
+
+[node name="TowerSpot723" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 352)
+
+[node name="TowerSpot724" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 352)
+
+[node name="TowerSpot725" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 352)
+
+[node name="TowerSpot726" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 352)
+
+[node name="TowerSpot727" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 352)
+
+[node name="TowerSpot728" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 352)
+
+[node name="TowerSpot729" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 352)
+
+[node name="TowerSpot730" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 352)
+
+[node name="TowerSpot731" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 352)
+
+[node name="TowerSpot732" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 352)
+
+[node name="TowerSpot733" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 352)
+
+[node name="TowerSpot734" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 352)
+
+[node name="TowerSpot735" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 352)
+
+[node name="TowerSpot736" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 352)
+
+[node name="TowerSpot737" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 368)
+
+[node name="TowerSpot738" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 368)
+
+[node name="TowerSpot739" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 368)
+
+[node name="TowerSpot740" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 368)
+
+[node name="TowerSpot741" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 368)
+
+[node name="TowerSpot742" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 368)
+
+[node name="TowerSpot743" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 368)
+
+[node name="TowerSpot744" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 368)
+
+[node name="TowerSpot745" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 368)
+
+[node name="TowerSpot746" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 368)
+
+[node name="TowerSpot747" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 368)
+
+[node name="TowerSpot748" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 368)
+
+[node name="TowerSpot749" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 368)
+
+[node name="TowerSpot750" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 368)
+
+[node name="TowerSpot751" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 368)
+
+[node name="TowerSpot752" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 368)
+
+[node name="TowerSpot753" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 368)
+
+[node name="TowerSpot754" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 368)
+
+[node name="TowerSpot755" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 368)
+
+[node name="TowerSpot756" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 368)
+
+[node name="TowerSpot757" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 368)
+
+[node name="TowerSpot758" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 368)
+
+[node name="TowerSpot759" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 368)
+
+[node name="TowerSpot760" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 368)
+
+[node name="TowerSpot761" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 368)
+
+[node name="TowerSpot762" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 368)
+
+[node name="TowerSpot763" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 368)
+
+[node name="TowerSpot764" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 368)
+
+[node name="TowerSpot765" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 368)
+
+[node name="TowerSpot766" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 368)
+
+[node name="TowerSpot767" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 368)
+
+[node name="TowerSpot768" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 368)
+
+[node name="TowerSpot769" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 384)
+
+[node name="TowerSpot770" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 384)
+
+[node name="TowerSpot771" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 384)
+
+[node name="TowerSpot772" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 384)
+
+[node name="TowerSpot773" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 384)
+
+[node name="TowerSpot774" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 384)
+
+[node name="TowerSpot775" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 384)
+
+[node name="TowerSpot776" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 384)
+
+[node name="TowerSpot777" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 384)
+
+[node name="TowerSpot778" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 384)
+
+[node name="TowerSpot779" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 384)
+
+[node name="TowerSpot780" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 384)
+
+[node name="TowerSpot781" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 384)
+
+[node name="TowerSpot782" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 384)
+
+[node name="TowerSpot783" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 384)
+
+[node name="TowerSpot784" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 384)
+
+[node name="TowerSpot785" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 384)
+
+[node name="TowerSpot786" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 384)
+
+[node name="TowerSpot787" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 384)
+
+[node name="TowerSpot788" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 384)
+
+[node name="TowerSpot789" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 384)
+
+[node name="TowerSpot790" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 384)
+
+[node name="TowerSpot791" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 384)
+
+[node name="TowerSpot792" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 384)
+
+[node name="TowerSpot793" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 384)
+
+[node name="TowerSpot794" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 384)
+
+[node name="TowerSpot795" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 384)
+
+[node name="TowerSpot796" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 384)
+
+[node name="TowerSpot797" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 384)
+
+[node name="TowerSpot798" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 384)
+
+[node name="TowerSpot799" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 384)
+
+[node name="TowerSpot800" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 384)
+
+[node name="TowerSpot801" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 400)
+
+[node name="TowerSpot802" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 400)
+
+[node name="TowerSpot803" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 400)
+
+[node name="TowerSpot804" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 400)
+
+[node name="TowerSpot805" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 400)
+
+[node name="TowerSpot806" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 400)
+
+[node name="TowerSpot807" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 400)
+
+[node name="TowerSpot808" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 400)
+
+[node name="TowerSpot809" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 400)
+
+[node name="TowerSpot810" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 400)
+
+[node name="TowerSpot811" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 400)
+
+[node name="TowerSpot812" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 400)
+
+[node name="TowerSpot813" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 400)
+
+[node name="TowerSpot814" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 400)
+
+[node name="TowerSpot815" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 400)
+
+[node name="TowerSpot816" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 400)
+
+[node name="TowerSpot817" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 400)
+
+[node name="TowerSpot818" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 400)
+
+[node name="TowerSpot819" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 400)
+
+[node name="TowerSpot820" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 400)
+
+[node name="TowerSpot821" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 400)
+
+[node name="TowerSpot822" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 400)
+
+[node name="TowerSpot823" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 400)
+
+[node name="TowerSpot824" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 400)
+
+[node name="TowerSpot825" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 400)
+
+[node name="TowerSpot826" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 400)
+
+[node name="TowerSpot827" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 400)
+
+[node name="TowerSpot828" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 400)
+
+[node name="TowerSpot829" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 400)
+
+[node name="TowerSpot830" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 400)
+
+[node name="TowerSpot831" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 400)
+
+[node name="TowerSpot832" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 400)
+
+[node name="TowerSpot833" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 416)
+
+[node name="TowerSpot834" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 416)
+
+[node name="TowerSpot835" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 416)
+
+[node name="TowerSpot836" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 416)
+
+[node name="TowerSpot837" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 416)
+
+[node name="TowerSpot838" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 416)
+
+[node name="TowerSpot839" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 416)
+
+[node name="TowerSpot840" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 416)
+
+[node name="TowerSpot841" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 416)
+
+[node name="TowerSpot842" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 416)
+
+[node name="TowerSpot843" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 416)
+
+[node name="TowerSpot844" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 416)
+
+[node name="TowerSpot845" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 416)
+
+[node name="TowerSpot846" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 416)
+
+[node name="TowerSpot847" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 416)
+
+[node name="TowerSpot848" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 416)
+
+[node name="TowerSpot849" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 416)
+
+[node name="TowerSpot850" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 416)
+
+[node name="TowerSpot851" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 416)
+
+[node name="TowerSpot852" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 416)
+
+[node name="TowerSpot853" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 416)
+
+[node name="TowerSpot854" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 416)
+
+[node name="TowerSpot855" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 416)
+
+[node name="TowerSpot856" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 416)
+
+[node name="TowerSpot857" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 416)
+
+[node name="TowerSpot858" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 416)
+
+[node name="TowerSpot859" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 416)
+
+[node name="TowerSpot860" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 416)
+
+[node name="TowerSpot861" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 416)
+
+[node name="TowerSpot862" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 416)
+
+[node name="TowerSpot863" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 416)
+
+[node name="TowerSpot864" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 416)
+
+[node name="TowerSpot865" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 432)
+
+[node name="TowerSpot866" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 432)
+
+[node name="TowerSpot867" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 432)
+
+[node name="TowerSpot868" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 432)
+
+[node name="TowerSpot869" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 432)
+
+[node name="TowerSpot870" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 432)
+
+[node name="TowerSpot871" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 432)
+
+[node name="TowerSpot872" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 432)
+
+[node name="TowerSpot873" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 432)
+
+[node name="TowerSpot874" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 432)
+
+[node name="TowerSpot875" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 432)
+
+[node name="TowerSpot876" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 432)
+
+[node name="TowerSpot877" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 432)
+
+[node name="TowerSpot878" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 432)
+
+[node name="TowerSpot879" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 432)
+
+[node name="TowerSpot880" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 432)
+
+[node name="TowerSpot881" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 432)
+
+[node name="TowerSpot882" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 432)
+
+[node name="TowerSpot883" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 432)
+
+[node name="TowerSpot884" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 432)
+
+[node name="TowerSpot885" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 432)
+
+[node name="TowerSpot886" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 432)
+
+[node name="TowerSpot887" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 432)
+
+[node name="TowerSpot888" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 432)
+
+[node name="TowerSpot889" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 432)
+
+[node name="TowerSpot890" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 432)
+
+[node name="TowerSpot891" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 432)
+
+[node name="TowerSpot892" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 432)
+
+[node name="TowerSpot893" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 432)
+
+[node name="TowerSpot894" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 432)
+
+[node name="TowerSpot895" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 432)
+
+[node name="TowerSpot896" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 432)
+
+[node name="TowerSpot897" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 448)
+
+[node name="TowerSpot898" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 448)
+
+[node name="TowerSpot899" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 448)
+
+[node name="TowerSpot900" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 448)
+
+[node name="TowerSpot901" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 448)
+
+[node name="TowerSpot902" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 448)
+
+[node name="TowerSpot903" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 448)
+
+[node name="TowerSpot904" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 448)
+
+[node name="TowerSpot905" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 448)
+
+[node name="TowerSpot906" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 448)
+
+[node name="TowerSpot907" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 448)
+
+[node name="TowerSpot908" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 448)
+
+[node name="TowerSpot909" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 448)
+
+[node name="TowerSpot910" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 448)
+
+[node name="TowerSpot911" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 448)
+
+[node name="TowerSpot912" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 448)
+
+[node name="TowerSpot913" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 448)
+
+[node name="TowerSpot914" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 448)
+
+[node name="TowerSpot915" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 448)
+
+[node name="TowerSpot916" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 448)
+
+[node name="TowerSpot917" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 448)
+
+[node name="TowerSpot918" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 448)
+
+[node name="TowerSpot919" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 448)
+
+[node name="TowerSpot920" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 448)
+
+[node name="TowerSpot921" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 448)
+
+[node name="TowerSpot922" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 448)
+
+[node name="TowerSpot923" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 448)
+
+[node name="TowerSpot924" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 448)
+
+[node name="TowerSpot925" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 448)
+
+[node name="TowerSpot926" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 448)
+
+[node name="TowerSpot927" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 448)
+
+[node name="TowerSpot928" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 448)
+
+[node name="TowerSpot929" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 464)
+
+[node name="TowerSpot930" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 464)
+
+[node name="TowerSpot931" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 464)
+
+[node name="TowerSpot932" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 464)
+
+[node name="TowerSpot933" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 464)
+
+[node name="TowerSpot934" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 464)
+
+[node name="TowerSpot935" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 464)
+
+[node name="TowerSpot936" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 464)
+
+[node name="TowerSpot937" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 464)
+
+[node name="TowerSpot938" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 464)
+
+[node name="TowerSpot939" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 464)
+
+[node name="TowerSpot940" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 464)
+
+[node name="TowerSpot941" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 464)
+
+[node name="TowerSpot942" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 464)
+
+[node name="TowerSpot943" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 464)
+
+[node name="TowerSpot944" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 464)
+
+[node name="TowerSpot945" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 464)
+
+[node name="TowerSpot946" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 464)
+
+[node name="TowerSpot947" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 464)
+
+[node name="TowerSpot948" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 464)
+
+[node name="TowerSpot949" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 464)
+
+[node name="TowerSpot950" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 464)
+
+[node name="TowerSpot951" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 464)
+
+[node name="TowerSpot952" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 464)
+
+[node name="TowerSpot953" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 464)
+
+[node name="TowerSpot954" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 464)
+
+[node name="TowerSpot955" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 464)
+
+[node name="TowerSpot956" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 464)
+
+[node name="TowerSpot957" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 464)
+
+[node name="TowerSpot958" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 464)
+
+[node name="TowerSpot959" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 464)
+
+[node name="TowerSpot960" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 464)
+
+[node name="TowerSpot961" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 480)
+
+[node name="TowerSpot962" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 480)
+
+[node name="TowerSpot963" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 480)
+
+[node name="TowerSpot964" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 480)
+
+[node name="TowerSpot965" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 480)
+
+[node name="TowerSpot966" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 480)
+
+[node name="TowerSpot967" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 480)
+
+[node name="TowerSpot968" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 480)
+
+[node name="TowerSpot969" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 480)
+
+[node name="TowerSpot970" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 480)
+
+[node name="TowerSpot971" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 480)
+
+[node name="TowerSpot972" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 480)
+
+[node name="TowerSpot973" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 480)
+
+[node name="TowerSpot974" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 480)
+
+[node name="TowerSpot975" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 480)
+
+[node name="TowerSpot976" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 480)
+
+[node name="TowerSpot977" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 480)
+
+[node name="TowerSpot978" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 480)
+
+[node name="TowerSpot979" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 480)
+
+[node name="TowerSpot980" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 480)
+
+[node name="TowerSpot981" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 480)
+
+[node name="TowerSpot982" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 480)
+
+[node name="TowerSpot983" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 480)
+
+[node name="TowerSpot984" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 480)
+
+[node name="TowerSpot985" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 480)
+
+[node name="TowerSpot986" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 480)
+
+[node name="TowerSpot987" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 480)
+
+[node name="TowerSpot988" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 480)
+
+[node name="TowerSpot989" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 480)
+
+[node name="TowerSpot990" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 480)
+
+[node name="TowerSpot991" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 480)
+
+[node name="TowerSpot992" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 480)
+
+[node name="TowerSpot993" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(0, 496)
+
+[node name="TowerSpot994" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(16, 496)
+
+[node name="TowerSpot995" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(32, 496)
+
+[node name="TowerSpot996" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(48, 496)
+
+[node name="TowerSpot997" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(64, 496)
+
+[node name="TowerSpot998" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(80, 496)
+
+[node name="TowerSpot999" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(96, 496)
+
+[node name="TowerSpot1000" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(112, 496)
+
+[node name="TowerSpot1001" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(128, 496)
+
+[node name="TowerSpot1002" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(144, 496)
+
+[node name="TowerSpot1003" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(160, 496)
+
+[node name="TowerSpot1004" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(176, 496)
+
+[node name="TowerSpot1005" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(192, 496)
+
+[node name="TowerSpot1006" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(208, 496)
+
+[node name="TowerSpot1007" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(224, 496)
+
+[node name="TowerSpot1008" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(240, 496)
+
+[node name="TowerSpot1009" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(256, 496)
+
+[node name="TowerSpot1010" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(272, 496)
+
+[node name="TowerSpot1011" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(288, 496)
+
+[node name="TowerSpot1012" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(304, 496)
+
+[node name="TowerSpot1013" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(320, 496)
+
+[node name="TowerSpot1014" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(336, 496)
+
+[node name="TowerSpot1015" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(352, 496)
+
+[node name="TowerSpot1016" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(368, 496)
+
+[node name="TowerSpot1017" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(384, 496)
+
+[node name="TowerSpot1018" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(400, 496)
+
+[node name="TowerSpot1019" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(416, 496)
+
+[node name="TowerSpot1020" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(432, 496)
+
+[node name="TowerSpot1021" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(448, 496)
+
+[node name="TowerSpot1022" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(464, 496)
+
+[node name="TowerSpot1023" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(480, 496)
+
+[node name="TowerSpot1024" parent="TowerSpots" instance=ExtResource("2_yiqlv")]
+position = Vector2(496, 496)

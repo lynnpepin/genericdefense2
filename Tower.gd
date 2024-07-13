@@ -1,20 +1,18 @@
 extends Node2D
 
-var RADIUS = 64.0
-var FIRE_PERIOD = 1.0
-var FIRE_TIMER  = 1.0
-var CREEPS_INSIDE = []
-var DAMAGE      = 3.0
-
-var FIRING          = false
+@export var RADIUS = 64.0
+@export var FIRE_PERIOD = 1.0
+@export var FIRE_TIMER  = 1.0
+@export var CREEPS_INSIDE = []
+@export var DAMAGE      = 3.0
 
 # Variables for handling mouse events
-var mouse_area_inside = false;
+var mouse_area_inside = true;
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
+
 	$AttackArea/CollisionShape2D.shape.radius = RADIUS;
-	
 	$TowerArea.connect("mouse_entered", _on_mouse_entered)
 	$TowerArea.connect("mouse_exited", _on_mouse_exited)
 	
@@ -30,17 +28,15 @@ func _process(delta):
 	if FIRE_TIMER >= FIRE_PERIOD:
 		# can fire
 		if len(CREEPS_INSIDE) > 0:
-			FIRING = true;
 			FIRE_TIMER = 0.0
 			var creep = CREEPS_INSIDE[0].get_parent()
 			creep.damage(DAMAGE)
 	else:
-		FIRING = false
 		# can' fire, increase time
 		FIRE_TIMER += delta
 	
-	# Render fire timer
-	$Sprite2D.modulate = Color(1.0, FIRE_TIMER / FIRE_PERIOD, FIRE_TIMER / FIRE_PERIOD)
+	# Debug: Render fire timer
+	#$Sprite2D.modulate = Color(1.0, FIRE_TIMER / FIRE_PERIOD, FIRE_TIMER / FIRE_PERIOD)
 	
 	# Call draw func
 	queue_redraw()
@@ -67,6 +63,7 @@ func _draw():
 			Color(1.0, 0.75, 0.125),
 			2.0
 		)
+		
 	## draw fire line
 	if len(CREEPS_INSIDE) > 0:
 		draw_line(

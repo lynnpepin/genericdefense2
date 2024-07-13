@@ -1,7 +1,7 @@
 extends Node2D
 
 var HEALTH = 100;
-var MONEY  = 100;
+var MONEY  = 16;
 var default_font : Font = ThemeDB.fallback_font;
 
 # Called when the node enters the scene tree for the first time.

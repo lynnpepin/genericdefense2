@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://ufgswj2arke1"]
+
+[ext_resource type="Script" path="res://Tower.gd" id="1_we01m"]
+
+[sub_resource type="Gradient" id="Gradient_tw3jo"]
+offsets = PackedFloat32Array(0.185754, 0.349162, 0.797486)
+colors = PackedColorArray(0, 0, 0, 1, 0.0342679, 0.0342679, 0.0342679, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_doj42"]
+frequency = 0.125
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kijvo"]
+width = 16
+height = 16
+seamless = true
+color_ramp = SubResource("Gradient_tw3jo")
+noise = SubResource("FastNoiseLite_doj42")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r6eh2"]
+radius = 64.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yqms"]
+size = Vector2(16, 16)
+
+[node name="Tower" type="Node2D"]
+script = ExtResource("1_we01m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("NoiseTexture2D_kijvo")
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CircleShape2D_r6eh2")
+
+[node name="TowerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerArea"]
+shape = SubResource("RectangleShape2D_0yqms")
